@@ -1,1 +1,61 @@
-
+<html>
+  <head>
+    <title>student data</title>
+    <script type="text/javascript">
+        var stu1=new student("ab");
+        var stu2=new student("cd");
+        var stu3=new student("ef");
+        var stu4=new student("gh");
+        var stu5=new student("ij");
+        var obj=[stu1,stu2,stu3,stu4,stu5];
+        function student(name)
+        {
+          this.name=name;
+          this.sub=new Array(Math.ceil(Math.random() * 100),Math.ceil(Math.random() * 100),Math.ceil(Math.random() * 100));
+        }
+        for(var i=0;i<5;i++)
+        {
+          sum=0;
+          for(var j=0;j<3;j++)
+          {
+             obj[i].sum=sum+obj[i].sub[j];
+          }
+          obj[i].avg=obj[i].sum/3;
+        }
+        for(var k=0;k<5;k++)
+        {
+          document.writeln(obj[k].name+" "+obj[k].sum+" "+obj[k].avg);
+        }
+        obj.sort(function(a,b)
+                 {
+                     return b.avg-a.avg
+        });
+        for(var i=0;i<5;i++)
+        {
+          document.writeln(obj[i]+" "+obj[i].sum);
+        }
+        obj.sort(function(a,b)
+                 {
+                    return b.avg-a.avg
+        });
+        for(var k=0;k<5;k++)
+        {
+            document.writeln(obj[k].name+" "+obj[k].avg);
+        }
+        obj.sort(function(a,b)
+                 {
+                    if(a.name < b.name)
+                        return -1
+                  else
+                       return 1
+        })
+        for(var k=0;k<5;k++)
+        {
+          document.writeln(obj[k].name+" "+obj[k].avg+" "+obj[k].sum)
+        }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+    
