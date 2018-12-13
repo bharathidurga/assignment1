@@ -13,7 +13,7 @@
           this.name=name;
           this.sub=new Array(Math.ceil(Math.random() * 100),Math.ceil(Math.random() * 100),Math.ceil(Math.random() * 100));
         }
-        for(var i=0;i<5;i++)
+        for(var i=0;i<obj.length;i++)
         {
           sum=0;
           for(var j=0;j<3;j++)
@@ -22,7 +22,7 @@
           }
           obj[i].avg=obj[i].sum/3;
         }
-        for(var k=0;k<5;k++)
+        for(var k=0;k<obj.length;k++)
         {
           document.writeln(obj[k].name+" "+obj[k].sum+" "+obj[k].avg);
         }
@@ -30,7 +30,7 @@
                  {
                      return b.avg-a.avg
         });
-        for(var i=0;i<5;i++)
+        for(var i=0;i<obj.length;i++)
         {
           document.writeln(obj[i]+" "+obj[i].sum);
         }
@@ -38,7 +38,7 @@
                  {
                     return b.avg-a.avg
         });
-        for(var k=0;k<5;k++)
+        for(var k=0;k<obj.length;k++)
         {
             document.writeln(obj[k].name+" "+obj[k].avg);
         }
@@ -49,7 +49,7 @@
                   else
                        return 1
         })
-        for(var k=0;k<5;k++)
+        for(var k=0;k<obj.length;k++)
         {
           document.writeln(obj[k].name+" "+obj[k].avg+" "+obj[k].sum)
         }
