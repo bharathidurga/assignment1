@@ -1,61 +1,51 @@
 <html>
-  <head>
-    <title>student data</title>
-    <script type="text/javascript">
-        var stu1=new student("ab");
-        var stu2=new student("cd");
-        var stu3=new student("ef");
-        var stu4=new student("gh");
-        var stu5=new student("ij");
-        var obj=[stu1,stu2,stu3,stu4,stu5];
-        function student(name)
-        {
+<head>
+  <title>student</title>
+  <script type="text/javascript">
+      var stu1=new Student("swapna");
+      var stu2=new Student("radha");
+      var stu3=new Student("bharathi");
+      var stu4=new Student("sailaja");
+      var stu5=new Student("lakshmi");
+      var stud=[stu1,stu2,stu3,stu4,stu5];
+      function Student(name)
+      {
           this.name=name;
-          this.sub=new Array(Math.ceil(Math.random() * 100),Math.ceil(Math.random() * 100),Math.ceil(Math.random() * 100));
-        }
-        for(var i=0;i<obj.length;i++)
-        {
+          this.subj=new Array(Math.floor(Math.random() * 100),Math.floor(Math.random() * 100),Math.floor(Math.random() * 100));
+}
+      for(var i=0;i<stud.length;i++)
+      {
           sum=0;
           for(var j=0;j<3;j++)
           {
-             obj[i].sum=sum+obj[i].sub[j];
+              stud[i].sum=sum+stud[i].subj[j];
           }
-          obj[i].avg=obj[i].sum/3;
-        }
-        for(var k=0;k<obj.length;k++)
-        {
-          document.writeln(obj[k].name+" "+obj[k].sum+" "+obj[k].avg);
-        }
-        obj.sort(function(a,b)
-                 {
-                     return b.avg-a.avg
-        });
-        for(var i=0;i<obj.length;i++)
-        {
-          document.writeln(obj[i]+" "+obj[i].sum);
-        }
-        obj.sort(function(a,b)
-                 {
-                    return b.avg-a.avg
-        });
-        for(var k=0;k<obj.length;k++)
-        {
-            document.writeln(obj[k].name+" "+obj[k].avg);
-        }
-        obj.sort(function(a,b)
-                 {
-                    if(a.name < b.name)
-                        return -1
-                  else
-                       return 1
-        })
-        for(var k=0;k<obj.length;k++)
-        {
-          document.writeln(obj[k].name+" "+obj[k].avg+" "+obj[k].sum)
-        }
-    </script>
+          stud[i].avg=stud[i].sum/3;
+      }
+ document.writeln("<h1>names and marks</h1><br>")
+     stud.sort(function(a,b){return b.sum-a.sum});
+      for(var k=0;k<stud.length;k++)
+      {
+        document.writeln(stud[k].name+"  "+stud[k].sum+"<br>");
+     }
+ stud.sort(function(a, b){
+    if(a.name < b.name) 
+     return -1 
+    else
+      return 1
+      })
+  document.writeln("<h1>names</h1><br>");
+      for(var k=0;k<stud.length;k++)
+      {
+        document.writeln(stud[k].name+"<br>");
+     }
+ document.writeln("<h1>names and averages</h2><br>")
+    stud.sort(function(a,b){return b.avg-a.avg;});
+      for(var k=0;k<stud.length;k++)
+      {
+       document.writeln(stud[k].name+"  "+stud[k].avg+"<br>");
+     }
+   </script>
   </head>
-  <body>
-  </body>
+  <body/>
 </html>
-    
